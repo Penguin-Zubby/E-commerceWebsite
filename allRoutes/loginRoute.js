@@ -38,7 +38,7 @@ router.get("/", function (req, res) {
     userMessage = req.session.flash.message;
     req.session.flash = "";
   }
-  res.render("login", { title: "Login", userMessageType, userMessage });
+  res.render("login", { title: "Login form", userMessageType, userMessage });
 });
 
 module.exports = router;
