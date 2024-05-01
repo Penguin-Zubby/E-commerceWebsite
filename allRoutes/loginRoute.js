@@ -1,25 +1,35 @@
-const express = require("express");
-const router = express.Router();
+var express = require("express");
+var router = express.Router();
 
-const userData = [
-  { username: "zubair", password: "123abc" },
-  { username: "john", password: "789xyz" },
+var userData = [
+  { username: "zubair@gmail.com", password: "123abc" },
+  { username: "john@yahoo.com", password: "789xyz" },
 ];
 
 function checkUserid(username, password) {
-  if (userData.find((user) => user.username === username)) {
-    if (userData.find((user) => user.password === password)) {
-      return true;
+  const user = userData.find((user) => user.username === username);
+  if (user) {
+    if (user.password === password) {
+      return { user, success: true };
     }
   }
+  return { success: false };
 }
+//route handler
 router.post("/", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
-  if (chechUserid(username, password)) {
-    req.sessipon.isAuthenticated = true;
-    res.redirect("/userHome");
+  const result = checkUserid(username, password);
+
+  if (result.success) {
+    req.session.isAuthenticated = true;
+    req.session.user = result.user;
+    res.redirect("/products");
+    req.session.flash = {
+      type: "Success",
+      message: "Welcome back, " + result.user.username,
+    };
   } else {
     req.session.flash = {
       type: "error",
@@ -30,15 +40,7 @@ router.post("/", function (req, res) {
 });
 
 router.get("/", function (req, res) {
-  let userMessageType = null;
-  let userMessage = null;
-
-  if (req.session.flash) {
-    userMessageType = req.session.flash.type;
-    userMessage = req.session.flash.message;
-    req.session.flash = "";
-  }
-  res.render("login", { title: "Login form", userMessageType, userMessage });
+  res.render("login", { title: "Login form" });
 });
 
 module.exports = router;

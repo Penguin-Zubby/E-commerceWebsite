@@ -1,10 +1,17 @@
 <h1>Welcome to {{title}} page</h1>
+
 <form class="frm-container">
+    
     <label>Username</label>
-    <input type="email" alt="Username text bar" placeholder="Enter your email">
+    <input type="email" alt="Username text bar" placeholder="your@email.com">
     <label>Password</label>
-    <input type="password" alt="Password text bar">
+    <input type="password" alt="Password text bar" placeholder="*******">
     <button type="reset" class="frm-button" alt="reset button">Reset</button>
     <button type="submit" class="frm-button" alt="submit button">Submit</button></br>
-    <p>Become a member today <a href="register.hbs"> Register here</a>.</p>
+    <p>Become a member today <a href="register"> Register here</a>.</p>
 </form>
+{{#each errors}}
+<div class="flash-message {{this.type}}">
+    {{this.message}}
+</div>
+{{/each}}

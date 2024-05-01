@@ -1,38 +1,67 @@
 body {
     padding: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: beige;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#fffaf0;
 }
 
-/*Register Form*/
+/*Login page flash message*/
+.flash-message {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/*Form pages styling*/
 .frm-container {
-    padding: 16px;
+    padding: 20px;
+    width: 650px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .frm-button {
-    background-color: blanchedalmond;
-    color: white;
+    background-color: rgb(251, 196, 114);
+    color: rgb(10, 10, 10);
     padding: 16px 20px;
+    border-radius: 5px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .frm-button:hover {
     opacity: 1;
 }
 
-input[type=email], input[type=password] {
-    width: 100%;
+.frm-container input[type=email], 
+.frm-container input[type=password] {
+    width: 95%;
     padding:16px;
-    border: none;
+    border: 1px solid #ccc;
     background: #f1f1f1;
     display: inline-block;
     margin: 5px 0 22px 0;
 }
-input[type=email]:focus, input[type=password]:focus {
+.frm-container input[type=email]:focus,
+.frm-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }

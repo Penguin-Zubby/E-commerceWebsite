@@ -1,2 +1,95 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<head>
+    <link rel="stylesheet" href="/css/index.css"/>
+    
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-bar">
+            <nav>
+                <ul>
+                    <li><a href="login">Login</a></li>
+                    <li><a href="register">Register</a></li>
+                    <li><a href="products">Products</a></li>
+                    {{!<li><a href="payment">Payment</a></li>}}
+                    <li><a href="contactUs">Contact Us</a></li>
+                    <li><a href="aboutUs">About us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Welcome</h1>
+                <p>Check out our exclusive offer on Kidd Dior collaboration.</p>
+                <a href="kiddDior" class="btn">Kidd Dior &#8594</a>
+            </div>
+            <div class="col-2">
+                <img src="/img/beige-hood.png">
+            </div>
+        </div>
+    </div>
+    {{!Adding category list}}
+    <div class="category-list">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="/img/category-1.png">
+                </div>
+                <div class="col-3">
+                    <img src="/img/category-2.jpg">
+                </div>
+                <div class="col-3">
+                    <img src="/img/category-3.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!Latest Products List }}
+    <div class="category-latest">
+        <h2 class="heading-latest">Latest Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="/img/tshirt-5.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/img/tshirt-9.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/img/tshirt-12.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/img/tshirt-10.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="/img/tshirt-6.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/img/tshirt-3.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/img/tshirt-2.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/img/tshirt-7.png">
+                <h4>T-shirt</h4>
+                <p>£12.99</p>
+            </div>
+        </div>
+    </div>
+</body>
